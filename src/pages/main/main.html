@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon ios="ios-list" md="md-list" class="icon2"></ion-icon>
+    <div style="float: right;">
+      <ion-icon ios="ios-cart" md="md-cart" class="icon2"></ion-icon>
+      <ion-icon ios="ios-search" md="md-search" class="icon2"></ion-icon>
+    </div>
+    <ion-slides>
+      <ion-slide class="cat" *ngFor="let category of categories">
+        <img src="{{category['category_img']}}">
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="has-header">
+  <div class="container">
+    <div class="item" *ngFor="let category of categories; let i = index">
+      <img src="{{category['category_img']}}" (click)="moveToList($event, category)">
+    </div>
+  </div>
+  <img src="assets/imgs/Mobile-Apps-Banner.png"/>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <div style="float: right;">
+      <ion-icon ios="ios-cart" md="md-cart" class="icon2"></ion-icon>
+      <ion-icon ios="ios-search" md="md-search" class="icon2"></ion-icon>
+    </div>
+  </ion-navbar>
+    <ion-slides>
+      <ion-slide class="cat">
+        <img src="{{value['category_img']}}">
+      </ion-slide>
+    </ion-slides>
+    <ion-toolbar>
+      <ion-title>Fruits</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="item" style="height: 325px;" *ngFor="let product of value.products; let i = index">
+      <img src="{{product['product_img']}}" (click)="moveToProduct($event, product)">
+      <p>{{product['name']}}</p>
+      <p>{{product['weight']}}</p>
+      <p>{{product['price']}}</p>
+    </div>
+  </div>
+</ion-content>
